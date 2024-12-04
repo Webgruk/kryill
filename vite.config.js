@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server: {
     proxy: {
-      '/api': 'https://form-data-dhwk.onrender.com',
+      '/api': 'https://form-data-dhwk.onrender.com/api',
     },
   },
   build: {
