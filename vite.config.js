@@ -8,5 +8,9 @@ export default defineConfig({
       '/api': 'https://form-data-dhwk.onrender.com',
     },
   },
+  build: {
+    outDir: 'dist', // Ensure this matches Netlify's Publish directory
+  },
+
   plugins: [react()],
 })
