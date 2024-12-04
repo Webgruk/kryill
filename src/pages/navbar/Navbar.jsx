@@ -15,9 +15,7 @@ export default function Navbar() {
 
   const theme = useTheme()
 
-  const neutalLight = theme.palette.neutral.light
   const dark = theme.palette.neutral.dark
-  const background = theme.palette.background.default
   const primaryLight = theme.palette.neutral.main
   const alt = theme.palette.background.alt
 

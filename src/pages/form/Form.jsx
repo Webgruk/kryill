@@ -132,7 +132,7 @@ function Form() {
                 }
               >
                 <MenuItem value="HR">Human Resources</MenuItem>
-                <MenuItem value="engineering">Engineering</MenuItem>{' '}
+                <MenuItem value="engineering">Engineering</MenuItem>
                 <MenuItem value="logistics">Logistics</MenuItem>
               </Select>
             </FormControl>
