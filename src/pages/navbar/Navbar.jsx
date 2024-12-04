@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { IconButton, Typography, useMediaQuery } from '@mui/material'
 import { DarkMode, LightMode, Menu } from '@mui/icons-material'
 import { Outlet, useNavigate, Link } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setMode } from '../../States/index'
 import FlexBetween from '../../components/FlexBetween'
 import { useTheme } from '@mui/material/styles'
@@ -11,18 +11,15 @@ export default function Navbar() {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false)
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  //   const user = useSelector((state) => state.user)
   const isNonMobileScreens = useMediaQuery('(min-width: 1000px)')
 
   const theme = useTheme()
-  //   const [mode, setMode] = useState('dark')
 
   const neutalLight = theme.palette.neutral.light
   const dark = theme.palette.neutral.dark
   const background = theme.palette.background.default
   const primaryLight = theme.palette.neutral.main
   const alt = theme.palette.background.alt
-  //   const fullName = `${user.firstName} ${user.lastName}`
 
   return (
     <>
@@ -74,10 +71,6 @@ export default function Navbar() {
                 <DarkMode sx={{ fontSize: '25px' }} />
               )}
             </IconButton>
-            {/* <Message sx={{ fontSize: '25px' }} /> */}
-            {/* <Notifications sx={{ fontSize: '25px' }} /> */}
-
-            {/* <Help sx={{ fontSize: '25px' }} /> */}
           </FlexBetween>
         ) : (
           <IconButton
