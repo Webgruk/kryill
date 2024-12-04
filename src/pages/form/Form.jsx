@@ -41,11 +41,15 @@ function Form() {
 
   const handleFormSubmit = async (values) => {
     try {
-      const response = await axios.post('/api/v1/users/add', values, {
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await axios.post(
+        `${API_BASE_URL}/v1/users/add`,
+        values,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
         },
-      })
+      )
       alert('User successfully added!')
       console.log('Server Response:', response.data)
       navigate('/table')
@@ -54,6 +58,8 @@ function Form() {
       alert('Failed to submit the form. Please try again.')
     }
   }
+
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
   return (
     <Formik

@@ -34,11 +34,14 @@ function FormEdit() {
   const { id: userId } = useParams()
   const [data, setData] = useState({})
   const [, setError] = useState(null)
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/v1/users/find?userId=${userId}`)
+        const response = await axios.get(
+          `${API_BASE_URL}/v1/users/find?userId=${userId}`,
+        )
         setData(response.data.data || {})
       } catch (error) {
         setError('Error fetching data')
@@ -62,12 +65,17 @@ function FormEdit() {
       ...values,
       userId,
     }
+
     try {
-      const response = await axios.patch('/api/v1/users/update', obj, {
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await axios.patch(
+        `${API_BASE_URL}/v1/users/update`,
+        obj,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
         },
-      })
+      )
       alert('User successfully updated!')
       console.log('Server Response:', response.data)
       navigate('/table')
